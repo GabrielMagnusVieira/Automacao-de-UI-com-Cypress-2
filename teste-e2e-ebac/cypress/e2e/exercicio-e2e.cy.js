@@ -55,7 +55,6 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
         cy.get('#billing_address_1').type('Padre Joao Batista Reus 1959')
         cy.get('#billing_city').type('Porto Alegre')
         cy.get('#select2-billing_state-container')
-        cy.get('#billing_postcode').type('91920000')
         cy.get('#billing_phone').type('51994041075')
         cy.get('#payment_method_cod').click()
         cy.get('#terms').click()
