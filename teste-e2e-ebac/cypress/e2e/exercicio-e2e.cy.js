@@ -1,4 +1,5 @@
 /// <reference types="cypress" />
+const perfil = require('../fixtures/perfil.json')
 
 
 
@@ -19,8 +20,8 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
   it.only('Deve fazer login com sucesso' , () => {
 //login
         cy.visit('minha-conta/')
-        cy.get('#username').type('magnus181098@gmail.com')
-        cy.get('#password').type('dilolilo22.')
+        cy.get('#username').type(perfil.usuario)
+        cy.get('#password').type(perfil.senha)
         cy.get('.woocommerce-form > .button').click()
         cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain' ,'Olá')
 //produto 1
