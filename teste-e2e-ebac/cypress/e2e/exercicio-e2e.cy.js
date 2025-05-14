@@ -24,30 +24,21 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
         cy.get('#password').type(perfil.senha)
         cy.get('.woocommerce-form > .button').click()
         cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain' ,'Olá')
-//produto 1
+
+// Adiciona produto 1
         cy.visit('produtos/')
-        cy.get('.post-2559 > .product-block > .block-inner > .image > .product-image > .image-hover').click()
-        cy.get('.button-variable-item-M').click()
-        cy.get('.button-variable-item-Green').click()
-        cy.get('.single_add_to_cart_button').click()
+        cy.adicionarProdutoAoCarrinho(2559, 'M', 'Red')
+
 //produto 2
         cy.visit('produtos/')
-        cy.get('.post-3111 > .product-block > .block-inner > .image > .product-image > .image-hover').click()
-        cy.get('.button-variable-item-M').click()
-        cy.get('.button-variable-item-Brown').click()
-        cy.get('.single_add_to_cart_button').click()
-//produto3
+        cy.adicionarProdutoAoCarrinho(3111, 'M', 'Yellow')
+//produto 3
         cy.visit('produtos/')
-        cy.get('.post-3073 > .product-block > .block-inner > .image > .product-image > .image-hover').click()
-        cy.get('.button-variable-item-33').click()
-        cy.get('.button-variable-item-Brown').click()
-        cy.get('.single_add_to_cart_button').click()
+        cy.adicionarProdutoAoCarrinho(3073, '33', 'Brown')
 //produto 4
         cy.visit('produtos/')
-        cy.get('.post-2622 > .product-block > .block-inner > .image > .product-image > .image-hover').click()
-        cy.get('.button-variable-item-M').click()
-        cy.get('.button-variable-item-Green').click()
-        cy.get('.single_add_to_cart_button').click()
+        cy.adicionarProdutoAoCarrinho(2622, 'M', 'Green')
+
 //carrinho            
         cy.visit('carrinho/')
         cy.get('.checkout-button').click()

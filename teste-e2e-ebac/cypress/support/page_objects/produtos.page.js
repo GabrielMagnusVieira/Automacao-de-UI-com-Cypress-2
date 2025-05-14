@@ -1,9 +1,15 @@
-class NomeClasse {
+class ProdutosPage {
 
-    nomeMetodo(parametros ){
+    visitarUrl() {
+        cy.visit('produtos')
+    }
+    
+
+    
+    addProdutoCarrinho(parametros ){
         //ações do método
     }
 
 }
 
-export default new NomeClasse()
+export default new ProdutosPage()
